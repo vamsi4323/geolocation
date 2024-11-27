@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+</head>
+<body>
+    <center>
+        <h1>This page will locate you</h1>
+        <button onclick="checkLocation()">Check My Location</button>
+
+        <p id="result"></p>
+        <p id="result2"></p>
+    </center>
+
+
+    <script>
+        let r = document.getElementById('result')
+        let r2 = document.getElementById('result2')
+
+        function checkLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showposition)
+            }
+        }
+
+        function showposition(position){
+            r.innerHTML=position.coords.latitude 
+            r2.innerHTML=position.coords.longitude
+        }
+
+    </script>
+    
+</body>
+</html>
